@@ -1,0 +1,59 @@
+body
+	color: textColorBlack
+
+.main_content
+	align-items: stretch
+	border-color: transparent !important
+	flex: 1
+	flex-flow: row nowrap
+	height: 100vh
+	overflow-y: auto
+
+	.main_content--center
+		padding-top: 100px
+
+	.content_wrap
+		padding: 0 2em 1em tabMenuWid
+
+.tab_title
+	margin-bottom: 8px
+
+	label
+		font-size: 0
+		font-weight: bold
+
+	p
+		font-size: 9px
+
+.content_tab
+	height: 100%
+	padding: 4em 22px 2em
+	position: fixed
+	text-align: center
+	width: tabMenuWid
+
+	.tab_item
+		background-color: lighten(indigo, 40%)
+		border-radius: borderRadius
+		color: #FFF
+		display: inline-block
+		font-size: 10px
+		height: 60px
+		margin: 10px 0
+		width: 60px
+
+		&:hover
+			background-color: indigo
+
+		span
+			display: block
+			height: 100%
+			padding-top: 4px
+			text-align: center
+			width: 100%
+
+	.tab_item--selected
+		background-color: indigo !important
+
+.app-footer
+	background-color: rgba(indigo, .08)

@@ -1,0 +1,115 @@
+.background--grey
+	background-color: #EEE !important
+
+.mini-loader
+	position: relative
+
+	&:before
+		animation: spin .6s linear infinite
+		border: 4px solid #FFF
+		border-radius: 50%
+		border-right-color: transparent
+		content: ' '
+		height: loaderSize
+		left: calc(50% - 34px / 2)
+		position: absolute
+		top: calc(50% - 34px / 2)
+		width: loaderSize
+
+@keyframes fade-in
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+
+@keyframes spin
+	0%
+		transform: rotate(0)
+
+	100%
+		transform: rotate(360deg)
+
+button[class*='btn']:not([aria-label='Close'])
+	box-shadow: boxShadow2
+
+input, textarea, select, button
+	&:focus
+		border-color: lighten(indigo, 40%) !important
+		box-shadow: 0 0 0 1px lighten(indigo, 40%) !important
+
+select
+	background-color: #FFF
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar
+	width: 8px
+
+/* Track */
+::-webkit-scrollbar-track
+	background: rgba(indigo, .2)
+
+/* Handle */
+::-webkit-scrollbar-thumb
+	background: rgba(indigo, .4)
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+	background: rgba(indigo, .6)
+
+.list_item
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+	span
+		color: #999
+
+btnColors = { indigo: indigo, orangeRed: orangeRed, amber: amber }
+
+for color, i in btnColors
+	.btn--{color}
+		background-color: btnColors[color] !important
+		color: #FFF !important
+
+	.btn--outline--{color}
+		border-color: btnColors[color] !important
+		color: btnColors[color] !important
+
+tagColors = { indigo: indigo, orangeRed: orangeRed, amber: amber }
+
+for color, i in tagColors
+	.tag--{color}
+		background-color: tagColors[color] !important
+		box-shadow: boxShadow1 !important
+		color: #FFF !important
+		filter: brightness(115%)
+
+		button
+			background-color: darken(tagColors[color], 20%) !important
+			box-shadow: boxShadow1 !important
+
+	.tag--outline--{color}
+		border-color: tagColors[color] !important
+		color: tagColors[color] !important
+
+textColors = { white: #FFFFFF, grey: #AAAAAA, indigo: indigo, orangeRed: orangeRed, amber: amber, blueGreen: blueGreen, emrald: emrald }
+
+for color, i in textColors
+	.text--{color}
+		color: textColors[color] !important
+
+bkColors = { grey: #EEE, white: #FFF, blueGrey: #cfd8dc, indigo: indigo, orangeRed: orangeRed, amber: amber, blueGreen: blueGreen, emrald: emrald }
+
+for color, i in bkColors
+	.background--{color}
+		background-color: bkColors[color] !important
+		color: #FFF
+
+	.background--{color}--light
+		background-color: rgba(bkColors[color], .3) !important
+
+.btn--round
+	border-radius: 30px !important
+	padding: 16px !important

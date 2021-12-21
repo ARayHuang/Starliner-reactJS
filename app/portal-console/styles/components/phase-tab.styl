@@ -1,0 +1,91 @@
+.phase_container
+	text-align: center
+
+.phase_wrap
+	input[type='radio']
+		display: none
+
+	input[type='radio'] + label
+		display: block
+		height: 100%
+		position: relative
+		width: 100%
+
+		&:hover
+			cursor: pointer
+
+			.phase_label
+				transform: scale(1.2) translate(0, -2px)
+
+			&:before
+				transform: scale(1.2)
+
+		&:before, &:after
+			transition: .2s ease-in-out all
+			-webkit-transition: .2s ease-in-out all
+
+		&:after
+			border-top: 4px solid #AAA
+			content: ' '
+			left: 0
+			position: absolute
+			top: calc(50% - 2px)
+			width: 100%
+			z-index: 1
+
+		&:before
+			background-color: #AAA
+			border-radius: 50%
+			content: ' '
+			height: phaseDotSize
+			left: 0
+			position: absolute
+			top: 25%
+			width: phaseDotSize
+			z-index: 2
+
+	input[type='radio']:checked + label
+		.phase_label span
+			box-shadow: boxShadow2
+
+		&:before
+			background-color: darken(indigo, 10%)
+			box-shadow: boxShadow2
+
+.phase_item
+	padding: 0
+
+	&:focus
+		border: none
+		box-shadow: none !important
+
+.phase_item:last-of-type
+	input[type='radio'] + label
+		&:after
+			border-style: dashed
+
+.phase_item .phase_label
+	left: calc(-50% + 9px)
+	position: absolute
+	text-align: center
+	top: -26px
+	transition: .1s ease-in-out all
+	width: 100%
+	-webkit-transition: .1s ease-in-out all
+
+	span
+		background-color: #fff
+		border-radius: tagRadius
+		font-size: 14px
+		font-weight: 777
+		padding: 4px 16px
+		transition: .2s ease-in-out all
+		-webkit-transition: .2s ease-in-out all
+
+.phase_wrap input[type='radio']:checked + label
+	span
+		background-color: darken(indigo, 10%)
+		color: #FFF
+
+.phase_wrap input[type='radio']:checked + label .phase_label
+	transform: scale(1.2)

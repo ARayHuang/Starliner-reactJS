@@ -1,0 +1,27 @@
+.page_header
+	margin-bottom: 1em
+
+	> *
+		margin-right: 10px
+		vertical-align: bottom
+
+[class^='title_tile']
+	padding: 0 20px 14px
+	position: relative
+
+	&::before
+		background-color: #EEE
+		content: ' '
+		height: 30px
+		left: 0
+		position: absolute
+		top: -8px
+		width: 6px
+
+for num in 1 .. 5
+	.title_tile--{num}
+		padding-left: 34px - num * 4px
+
+		&::before
+			background-color: lighten(darken(indigo, 40%), num * 15 + '%')
+			width: 21px - num * 4px

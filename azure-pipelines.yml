@@ -1,0 +1,30 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- release
+
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- checkout: self
+  persistCredentials: true
+  clean: true
+
+- task: AWSShellScript@1
+  inputs:
+    awsCredentials: 'Starliner_WebDeveloper_1'
+    regionName: 'us-west-2'
+    scriptType: 'inline'
+    inlineScript: | 
+      bash builder/build.sh 

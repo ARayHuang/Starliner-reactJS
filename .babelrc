@@ -1,0 +1,35 @@
+{
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-react"
+	],
+	"plugins": [
+		"@babel/syntax-dynamic-import",
+		"@babel/transform-runtime",
+		["module-resolver",
+			{
+				"root": ["./app/portal-console"],
+				"alias": {
+					"@contexts": "./app/portal-console/contexts/pages",
+					"@components": "./app/portal-console/components",
+					"@lib": "./app/portal-console/lib",
+				} 
+			}]
+	],
+	"env": {
+		"test": {
+			"presets": [
+				[
+					"@babel/preset-env",
+					{
+						"modules": "commonjs",
+						"targets": {
+							"node": "current"
+						}
+					}
+				],
+				"@babel/preset-react"
+			]
+		}
+	},
+}

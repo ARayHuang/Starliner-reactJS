@@ -1,0 +1,52 @@
+.dropzone
+	background-color: #fafafa
+	border: 2px dashed #CCC
+	border-radius: 18px
+	color: #AAA
+	cursor: pointer
+	margin: 20px 0
+	padding: 20px
+	text-align: center
+	transition: .2s ease-in-out all
+	-webkit-transition: .2s ease-in-out all
+
+	.icon
+		font-size: 80px
+		transition: .2s ease-in-out all
+		-webkit-transition: .2s ease-in-out all
+
+	&:hover
+		background-color: lighten(indigo, 95%)
+		border-color: indigo
+		color: textColorBlack
+
+		.icon
+			color: indigo
+			transform: scale(1.1)
+
+.upload_file_list--draft
+	margin: 10px 0
+	max-height: calc(80vh - 200px)
+	overflow: auto
+	padding: 1em
+
+	ul
+		list-style: none
+
+.status_list_table
+	width: 100%
+
+	tr
+		border: 1px solid #EEE
+
+	td
+		padding: 1em 2em
+
+	td.status
+		min-width: 76px
+		padding: 1em 0
+		text-align: center
+
+.svtp_menu
+	.icon
+		color: indigo

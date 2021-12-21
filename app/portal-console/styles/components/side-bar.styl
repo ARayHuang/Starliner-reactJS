@@ -1,0 +1,71 @@
+/* side-bar */
+.drawer
+	overflow: hidden
+	transition: .2s ease-in-out all
+	white-space: nowrap
+	-weblit-transition: .2s ease-in-out all
+
+	*
+		transition: .2s ease-in-out all
+		-weblit-transition: .2s ease-in-out all
+
+.logo
+	display: inline-block
+	height: 40pxd
+	width: 40px
+
+.name, .version
+	display: block
+	font-size: 9px
+	font-weight: normal
+	text-align: center
+
+.link
+	display: block
+	padding: 8px 0
+	padding-left: 22px !important
+	width: 100%
+
+	span
+		opacity: 0
+		transition: .4s ease-in-out all
+		-weblit-transition: .4s ease-in-out all
+
+.link_item
+	text-align: left
+	transition: .2s ease-in-out all
+
+	&:hover
+		background-color: rgba(#FFF, .08)
+
+	&:active
+		background-color: rgba(#FFF, .16)
+
+.drawer_wrapper
+	background-color: #0c1d47
+	color: #FFF
+	text-align: center
+	transition: .2s ease-in-out all
+	width: 70px
+	-weblit-transition: .2s ease-in-out all
+
+	&:hover
+		width: 200px
+
+		.link > span
+			opacity: 1 !important
+
+		.drawer
+			.logo
+				height: 50px
+				width: 50px
+
+			.name, .version
+				font-size: 9px
+
+			.name
+				font-size: 24px
+				font-weight: bold
+
+			.version
+				font-size: 9px
