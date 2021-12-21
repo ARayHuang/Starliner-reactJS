@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db.services:
+    container_name: mssql.service
+    hostname: mssql.service
+    image: rayhuang1111/svtp-mssql:latest
+    ports:
+      - "1436:1433"
+    environment:
+      "PUBLIC_PORT": "1436"
+  api.service:
+    container_name: api.service
+    hostname: api.service
+    image: rayhuang1111/svtpapi:latest
+    ports:
+      - "5000:80"
+    environment:
+      "PUBLIC_PORT": "5000"
+    links:
+      - db.services
+    depends_on:
+      - db.services
+    restart: on-failure
