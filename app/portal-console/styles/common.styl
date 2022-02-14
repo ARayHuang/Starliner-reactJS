@@ -42,9 +42,13 @@ select
 	background-color: #FFF
 
 /* scrollbar */
-/* width */
+/* vertical scroll */
 ::-webkit-scrollbar
 	width: 8px
+
+/* horizontal scroll */
+::-webkit-scrollbar
+	height: 8px
 
 /* Track */
 ::-webkit-scrollbar-track
@@ -113,3 +117,7 @@ for color, i in bkColors
 .btn--round
 	border-radius: 30px !important
 	padding: 16px !important
+
+.dashed-box
+	border: 2px dashed #CCC
+	border-radius: borderRadius

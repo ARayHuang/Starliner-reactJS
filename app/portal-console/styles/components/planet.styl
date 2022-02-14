@@ -1,0 +1,92 @@
+.team_card
+	&:hover
+		transition: 0.2s all ease-in-out
+		transform: scale(1.04) translate(8px, -10px)
+		.planet
+			transform: scale(1.2)
+			animation: 20s spin infinite linear
+			&::after
+				animation: 5s glow infinite
+			&::before
+				animation: 2s glow2 infinite
+
+.planet
+	background-color: #EEE
+	border-radius: 50%
+	box-shadow: boxShadow1
+	height: teamPlanetSizeMd
+	width: teamPlanetSizeMd
+
+.planet
+	position: relative
+	svg
+		z-index: 2
+	&::before, &::after
+		content: ' '
+		border-radius: 50%
+		background-color: grey
+		position: absolute
+
+	&:before
+		background-color: rgba(#2b4c77, 0.4)
+		left: -19px
+		top: -19px
+		width: teamPlanetSizeMd + 38px
+		height: teamPlanetSizeMd + 38px
+		z-index: -1
+		box-shadow: rgba(#62fbff, 0.5) 0 0 12px 5px
+
+	&:after
+		background-color: rgba(#62fbff, 0.1)
+		left: -10px
+		top: -10px
+		width: teamPlanetSizeMd + 20px
+		height: teamPlanetSizeMd + 20px
+		z-index: -2
+
+planetColors = { 
+	mars: colorMars, 
+	venus: colorVenus, 
+	neptune: colorNeptune,
+	mercury: colorMercury
+	bios: colorBios
+}
+
+@keyframes glow
+	0%
+		transform: scale(1)
+	70%
+		transform: scale(1.6)
+	100%
+		transform: scale(1)
+
+@keyframes glow2
+	0%
+		transform: scale(1)
+	30%
+		transform: scale(0.9)
+	70%
+		transform: scale(1.1)
+	100%
+		transform: scale(1)
+
+for color, i in planetColors
+	.planet--{color}
+		background-color: planetColors[color] !important
+
+@media (max-width: screenWidXl)
+	.planet
+		height: teamPlanetSizeSm
+		width: teamPlanetSizeSm
+		&:before
+			left: -14px
+			top: -14px
+			width: teamPlanetSizeSm + 28px
+			height: teamPlanetSizeSm + 28px
+
+		&:after
+			left: -7px
+			top: -7px
+			width: teamPlanetSizeSm + 14px
+			height: teamPlanetSizeSm + 14px
+

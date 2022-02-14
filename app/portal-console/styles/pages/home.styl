@@ -1,0 +1,97 @@
+
+random(min, max)
+	floor(math(0, 'random') * (max - min + 1) + min)
+
+.banner
+	position: fixed
+	top: 0
+	z-index: -1
+
+	.wall_paper
+		background: linear-gradient(rgba(12, 29, 71, 1) 0, rgba(115, 74, 140, .8) 89%) !important
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 64%)
+		height: 60vh
+		width: 100vw
+
+.team_card
+	background-color: rgba(#FFF, .8)
+	border-radius: 10px
+	box-shadow: boxShadow2
+	margin: 1em
+	margin-top: (teamPlanetSizeMd / 3) * 2 + 20px
+	max-width: 500px
+	min-height: 100px
+	min-width: 180px
+	padding: (teamPlanetSizeMd / 3) + 20px 20px 20px
+	position: relative
+	text-align: center
+	width: calc(25% - 32px)
+
+.team_card_title
+	left: 0
+	position: absolute
+	right: 0
+	top: -((teamPlanetSizeMd / 3) * 2)
+
+.link_tiles
+	background-color: grey
+	border-radius: borderRadius
+	display: inline-block
+	font-weight: bold
+	height: 100px
+	margin: 4px
+	padding-top: 20px
+	vertical-align: middle
+	width: 100px
+
+	&:hover
+		cursor: pointer
+		filter: brightness(110%)
+
+	.text
+		font-size: 9px
+		word-spacing: 70px
+
+.droppings
+	animation: space 2s infinite
+	background: linear-gradient(135deg, #fc97e9 10%, #fafc9f 30%, #bdf4f9 100%) fixed
+	border-radius: 10%
+	height: 24px
+	position: absolute
+	width: 4px
+
+.droppings--svg
+	background: none
+	fill: white
+	height: 20px
+	position: absolute
+	width: 20px
+
+for num in 1 .. 5
+	.link_tile--{num}
+		background-color: lighten(darken(indigo, 20%), num * 15 + '%')
+
+for num in 1 .. 200
+	.droppings-{num}
+		animation-delay: -(random(100s, 400s) / 100) !important
+		left: random(0, 2000px)
+		top: random(-500px, 800px)
+
+.tag--galaxy
+	// background: linear-gradient(90deg, rgba(52,16,124,1) 0%, rgba(111, 33, 219,1) 89%) !important;
+	background: linear-gradient(90deg, rgba(115, 74, 140, 1) 0, rgba(52, 16, 124, .8) 89%) !important
+
+@media (max-width: screenWidXl)
+	.team_card
+		margin: .5em
+		margin-top: (teamPlanetSizeSm / 3) * 2 + 40px
+		padding-top: (teamPlanetSizeSm / 3) + 10px
+		width: calc(20% - 16px)
+
+	.link_tiles
+		height: 50px
+		padding-top: 10px
+		width: 50px
+
+		.text
+			visibility: hidden

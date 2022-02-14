@@ -13,6 +13,7 @@ nupkg/
 *.user
 *.userosscache
 *.sln.docsates
+.idea/
 
 # Build results
 [Dd]ebug/

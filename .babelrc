@@ -1,5 +1,6 @@
 {
 	"presets": [
+		"@babel/typescript",
 		"@babel/preset-env",
 		"@babel/preset-react"
 	],
@@ -13,7 +14,10 @@
 					"@contexts": "./app/portal-console/contexts/pages",
 					"@components": "./app/portal-console/components",
 					"@lib": "./app/portal-console/lib",
-				} 
+					"@services": "./app/portal-console/services",
+					"@adapters": "./app/portal-console/adapters",
+				},
+				"extensions": [".tsx"]
 			}]
 	],
 	"env": {

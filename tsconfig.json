@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+	  "target": "ES2019",
+	  "lib": [
+		"dom",
+		"dom.iterable",
+		"esnext"
+	  ],
+	  "allowJs": true,
+	  "skipLibCheck": true,
+	  "strict": false,
+	  "forceConsistentCasingInFileNames": true,
+	  "noEmit": false,
+	  "esModuleInterop": true,
+	  "module": "esnext",
+	  "moduleResolution": "node",
+	  "resolveJsonModule": true,
+	  "isolatedModules": true,
+	  "jsx": "preserve",
+	  "baseUrl": "./app/portal-console",
+	  "paths": {
+			"@lib/*": ["./lib/*"],
+			"@contexts": ["./contexts/pages"],
+			"@components/*": ["./components/*"],
+			"@services/*": ["./services/*"],
+			"@adapters/*": ["./adapters/*"],
+		}
+	},
+	"include": [
+	  "**/*.ts",
+	  "**/*.tsx",
+	  "custom.d.ts"
+	],
+	"exclude": [
+	  "node_modules"
+	],
+  }

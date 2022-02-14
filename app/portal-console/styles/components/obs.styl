@@ -1,0 +1,80 @@
+/* OBS Related */
+.obs-modal-body {
+	padding: 0 25px;
+
+	.add-btn-container {
+		display: flex;
+		justify-content: center;
+		padding: 9px 0;
+		max-width: 320px;
+		cursor: pointer;
+	}
+
+	.add-btn-container:hover {
+		border-color: indigo;
+	}
+
+	.obs-modal-expandable-list {
+		width: 100%;
+	}
+
+	ul {
+		> div {
+			margin: 0 10px;
+		}
+
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 100%;
+		max-height: 400px;
+		overflow-x: auto;
+		place-content: flex-start;
+	}
+
+	li {
+		width: auto;
+		max-width: 320px;
+		margin: 0 10px;
+
+		.chakra-input__left-addon {
+			background: indigo;
+			border-color: indigo;
+			color: white;
+			font-weight: 500;
+		}
+	}
+
+	button.add-btn {
+		margin-left: 5px;
+		border-radius: 30px;
+		padding: 0;
+	}
+
+	button.remove-btn {
+		margin-left: 5px;
+		border-radius: 30px;
+		padding: 0;
+
+		span {
+			margin-right: 0;
+		}
+	}
+}
+
+.obs-list {
+	max-height: 120px;
+	overflow-y: auto;
+	padding-right: 15px;
+	padding-left: 5px;
+
+	li {
+		a {
+			color: -webkit-link;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}

@@ -31,6 +31,23 @@ module.exports = {
 				exclude: /(node_modules|bower_components)/,
 			},
 			{
+				test: /.(tsx|ts)$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/typescript', '@babel/preset-env'],
+						},
+					},
+					{ loader: 'ts-loader' },
+				],
+			},
+			// {
+			// 	test: /\.tsx?$/,
+			// 	use: 'ts-loader',
+			// 	exclude: /node_modules/,
+			// },
+			{
 				test: /\.css$/,
 				exclude: /(node_modules|bower_components)/,
 				use: [
@@ -91,7 +108,7 @@ module.exports = {
 		},
 	},
 	entry: {
-		'portal-console': path.join(__dirname, 'app', 'portal-console', 'index.js'),
+		'portal-console': path.join(__dirname, 'app', 'portal-console', 'index.tsx'),
 	},
 	output: {
 		path: path.join(__dirname, './public'),
@@ -115,6 +132,7 @@ module.exports = {
 		}),
 	],
 	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
 		alias: {
 			'portal-console': path.join(__dirname, './app/portal-console/'),
 			immutable: path.join(__dirname, './node_modules/immutable'),
